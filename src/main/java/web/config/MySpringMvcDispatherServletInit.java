@@ -2,7 +2,7 @@ package web.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MySpringMVCDispatherServletInit extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class MySpringMvcDispatherServletInit extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;

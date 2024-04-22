@@ -1,4 +1,4 @@
-package web.DAO;
+package web.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,12 +10,12 @@ import web.model.User;
 import java.util.List;
 
 @Repository
-public class UserDAOHibernateImp implements UserDAO  {
+public class UserDaoHibernateImp implements UserDao {
 
     private final SessionFactory sessionFactory;
 
     @Autowired
-    public UserDAOHibernateImp(SessionFactory sessionFactory) {
+    public UserDaoHibernateImp(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
