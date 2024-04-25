@@ -46,6 +46,7 @@ public class HibernateConfig {
 
         return properties;
     }
+//-------------------------- for Hibernate to work
 
     @Bean
     public LocalSessionFactoryBean sessionFactory() {

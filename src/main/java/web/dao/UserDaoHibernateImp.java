@@ -20,7 +20,7 @@ public class UserDaoHibernateImp implements UserDao {
     }
 
     @Override
-    @Transactional
+    @Transactional("hibernateTransactionManager")
     public List<User> getAllUsers() {
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("select u from User u", User.class).getResultList();
@@ -28,19 +28,19 @@ public class UserDaoHibernateImp implements UserDao {
     }
 
     @Override
-    @Transactional
+    @Transactional("hibernateTransactionManager")
     public User findUserById(long id) {
         return sessionFactory.getCurrentSession().get(User.class, id);
     }
 
     @Override
-    @Transactional
+    @Transactional("hibernateTransactionManager")
     public void createUser(User user) {
         sessionFactory.getCurrentSession().save(user);
     }
 
     @Override
-    @Transactional
+    @Transactional("hibernateTransactionManager")
     public void updateUser(long id, User user) {
         User originalUser = sessionFactory.getCurrentSession().get(User.class,id);
         originalUser.setName(user.getName());
@@ -49,7 +49,7 @@ public class UserDaoHibernateImp implements UserDao {
     }
 
     @Override
-    @Transactional
+    @Transactional("hibernateTransactionManager")
     public void deleteUser(long id) {
         Session session = sessionFactory.getCurrentSession();
         User user = session.get(User.class, id);
